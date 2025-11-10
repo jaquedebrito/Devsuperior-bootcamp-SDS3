@@ -1,46 +1,120 @@
-# Getting Started with Create React App
+# 🎨 DSVendas Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend da aplicação DSVendas desenvolvido com React, TypeScript e ApexCharts.
 
-## Available Scripts
+## 📋 Sobre
 
-In the project directory, you can run:
+Este é o frontend do projeto DSVendas, uma aplicação de dashboard de vendas que exibe:
+- Gráficos interativos de vendas
+- Tabela com dados paginados
+- Interface responsiva e moderna
 
-### `yarn start`
+## 🚀 Tecnologias
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React** 17.0.2
+- **TypeScript** 4.1.2
+- **ApexCharts** - Gráficos interativos
+- **Bootstrap** 5.1.1 - Estilização
+- **Axios** - Requisições HTTP
+- **React Router DOM** - Roteamento
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Scripts Disponíveis
 
-### `yarn test`
+### `npm start` ou `yarn start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Executa a aplicação em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
 
-### `yarn build`
+A página recarrega automaticamente quando você faz alterações.\
+Você também verá erros de lint no console.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm test` ou `yarn test`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Inicia o executor de testes em modo interativo.\
+Veja mais informações em [running tests](https://facebook.github.io/create-react-app/docs/running-tests).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run build` ou `yarn build`
 
-### `yarn eject`
+Cria o build de produção na pasta `build`.\
+Otimiza e minifica o código para melhor performance.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Os arquivos são minificados e incluem hashes nos nomes.\
+Está pronto para deploy!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📁 Estrutura de Pastas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+src/
+├── assets/          # Imagens e recursos estáticos
+├── components/      # Componentes reutilizáveis
+│   ├── BarChart/   # Gráfico de barras
+│   ├── DataTable/  # Tabela de dados
+│   ├── DonutChart/ # Gráfico de rosca
+│   ├── Footer/     # Rodapé
+│   └── NavBar/     # Barra de navegação
+├── pages/          # Páginas da aplicação
+│   ├── Dashboard/  # Página do dashboard
+│   └── Home/       # Página inicial
+├── types/          # Definições de tipos TypeScript
+├── utils/          # Funções utilitárias
+├── App.tsx         # Componente principal
+├── Routes.tsx      # Configuração de rotas
+└── index.tsx       # Ponto de entrada
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🔌 Configuração da API
 
-## Learn More
+A URL base da API está configurada em `utils/requests.ts`:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```typescript
+export const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para usar uma API diferente em desenvolvimento, crie um arquivo `.env.local`:
+
+```env
+REACT_APP_BACKEND_URL=http://sua-api.com
+```
+
+## 🎨 Componentes Principais
+
+### Dashboard
+Página principal com gráficos e tabela de vendas.
+
+### BarChart
+Exibe o total de vendas por vendedor em formato de gráfico de barras.
+
+### DonutChart
+Mostra a taxa de sucesso por vendedor em gráfico de rosca.
+
+### DataTable
+Tabela paginada com todos os dados de vendas.
+
+## 📦 Deploy
+
+### Netlify
+
+1. Faça o build:
+   ```bash
+   npm run build
+   ```
+
+2. Configure no Netlify:
+   - Build command: `npm run build`
+   - Publish directory: `build`
+   - Environment variable: `REACT_APP_BACKEND_URL=<sua-api-url>`
+
+## 📚 Saiba Mais
+
+- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React documentation](https://reactjs.org/)
+- [TypeScript documentation](https://www.typescriptlang.org/)
+- [ApexCharts documentation](https://apexcharts.com/docs/)
+
+## 🤝 Contribuindo
+
+Veja o arquivo [CONTRIBUTING.md](../CONTRIBUTING.md) no repositório principal.
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
