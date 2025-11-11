@@ -13,7 +13,7 @@ import com.devsuperior.dsvendas.service.SellerService;
 
 @RestController
 @RequestMapping(value = "/sellers")
-public class SellerControllers {
+public class SellerController {
 	
 	@Autowired
 	private SellerService service;
