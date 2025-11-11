@@ -27,6 +27,8 @@ jobs:
     
     - name: Prepare cache dirs
       run: mkdir -p ~/.cache/yarn ~/.npm
+    - name: Prepare Yarn cache directory
+      run: mkdir -p ~/.cache/yarn
     
     - name: Cache Yarn and node_modules
       uses: actions/cache@v3
