@@ -20,6 +20,22 @@ jobs:
         cache: 'yarn'
         cache-dependency-path: 'frontend/yarn.lock'
     
+    - name: Prepare cache dirs
+      run: mkdir -p ~/.cache/yarn ~/.npm
+    - name: Prepare Yarn cache directory
+      run: mkdir -p ~/.cache/yarn
+    
+    - name: Cache Yarn and node_modules
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cache/yarn
+          frontend/node_modules
+          ~/.npm
+        key: ${{ runner.os }}-yarn-${{ hashFiles('frontend/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    
     - name: Install dependencies
       run: |
         cd frontend
